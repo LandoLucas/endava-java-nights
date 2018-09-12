@@ -1,5 +1,8 @@
 package annotations;
 
+import htmlGenerator.HTMLType;
+import htmlGenerator.HtmlElement;
+
 @HtmlElement(type = HTMLType.LI)
 public class Product {
 
