@@ -84,13 +84,30 @@ public class Main {
         } 
 
         
+        //Obtain superclass and interfaces
         Class homersSuperClass = homerClass.getSuperclass();
         System.out.println("What's homer superclass? " + homersSuperClass.getName());
         
         Class[] homersInterfaces = homerClass.getInterfaces();
         for(Class interf: homersInterfaces) {
-            System.out.println("Interface: " + interf.getName());
+            System.out.println("Interface: " + interf.getName() + "\n");
         }
+        
+        
+        //New instance
+        try {
+            Bart hugo = (Bart) bartClass.newInstance();
+            
+            Field f = bartClass.getDeclaredField("catchphrase");
+            f.setAccessible(true);
+            f.set(hugo, "Estuve practicando, mira, hice una rata-paloma");
+            Object hugosCatchphrase = bartClass.getMethod("sayChatchphrase").invoke(hugo);
+            System.out.println("Hugo: " + hugosCatchphrase.toString() + "\n");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        
     }
 
 }
