@@ -20,16 +20,16 @@ public class Main {
         //Obtain an object class
         Class homerClass =  homer.getClass();      
         Class bartClass = bart.getClass();
-        System.out.println("Homer's class is: " + homerClass.getName() + "\n");
-        System.out.println("Bart's class is: " + bartClass.getName() + "\n");
-        
+        System.out.println("Homer's class is: " + homerClass.getName());
+        System.out.println("Bart's class is: " + bartClass.getName());
+        System.out.println("Homer's class class? " + homerClass.getClass().getName() + "\n");
         
         //Get a class contructor
         try {
             Constructor homersConstructor = homerClass.getConstructor(Boolean.class); 
             Constructor bartsConstructor = bartClass.getConstructor(); 
             
-            System.out.println("Bart's constructor is " + bartsConstructor.getName() + "\n");
+            System.out.println("Bart's constructor is " + bartsConstructor.getName());
             System.out.println("Homer's constructor is " + homersConstructor.getName() + "\n"); 
             
         }catch (NoSuchMethodException nsme) {
